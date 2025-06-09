@@ -1,350 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- LINKS -->
-    <link href="assets/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="assets/solid.css">
-    <link rel="stylesheet" href="assets/line.css">
-    <link href="assets/boxicons.min.css" rel="stylesheet">
-    <!-- FIXED: Add Unicons properly -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tosh Jamieson Portfolio</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tosh Jamieson Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #eacca6 0%, #fff3e0 100%);
-            background-color: #eacca6;
-        }
+  <!-- Bootstrap (optional if you use its components) -->
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <script src="assets/bootstrap.bundle.min.js"></script>
 
-        header, footer {
-            text-align: center;
-            padding: 50px;
-        }
+  <!-- Boxicons (this is the icon pack that works) -->
+  <link href="assets/boxicons.min.css" rel="stylesheet">
 
-        section {
-            margin-bottom: 50px;
-        }
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #eacca6 0%, #fff3e0 100%);
+      margin: 0;
+    }
 
-        h1 {
-            color: #000000;
-        }
+    header, footer {
+      text-align: center;
+      padding: 50px;
+    }
 
-        section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #434435;
-            font-weight: 700; /* Make headings bold */
-        }
+    section {
+      margin-bottom: 50px;
+    }
 
-        section h3 {
-            text-align: center;
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #000000;
-            font-weight: 700; /* Make h3 headings bold */
-        }
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #434435;
+      font-weight: bold;
+    }
 
-        section p {
-            max-width: 1000px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-            font-size: 20px;
-            color: #333;
-            text-align: left;
-        }
+    section h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #000;
+      font-weight: bold;
+    }
 
-        hr {
-            border: none;
-            height: 5px;
-            background-color: #c49b66; 
-            margin: 60px auto;
-            width: 80%;
-            opacity: 100;
-        }
+    section p {
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      font-size: 18px;
+      color: #333;
+      text-align: left;
+      padding: 0 20px;
+    }
 
-        .tagline {
-            font-size: 28px;
-            font-weight: 600;
-            color: #5a3e1b;
-            background-color: #fff3e0;
-            padding: 10px 20px;
-            border: 2px solid #5a3e1b;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin: 20px 0;
-            animation: fadeInScale 1s ease;
-        }
+    hr {
+      border: none;
+      height: 5px;
+      background-color: #c49b66;
+      margin: 60px auto;
+      width: 80%;
+    }
 
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
+    .tagline {
+      font-size: 28px;
+      font-weight: 600;
+      color: #5a3e1b;
+      background-color: #fff3e0;
+      padding: 10px 20px;
+      border: 2px solid #5a3e1b;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
 
-        .project-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 40px;
-        }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .project-card {
-            background: #251f13;
-            border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(30, 32, 31, 0.434);
-            width: 150px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    .navbar {
+      list-style: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
-        }
+    .navbar li {
+      display: inline;
+    }
 
-        .project-card h3 {
-            margin-top: 0;
-            color: #5a3e1b;
-            font-weight: 700; /* Make card headings bold */
-        }
+    .nav-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 4px solid black;
+      border-radius: 10px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: transparent;
+      transition: all 0.2s ease;
+    }
 
-        .navbar {
-            list-style: none;
-            background-color: transparent;
-            margin: 0;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    .nav-button:hover {
+      background-color: white;
+      color: black;
+    }
 
-        .navbar li {
-            display: inline;
-        }
+    .project-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+    }
 
-        .navbar a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.5s ease;
-        }
+    .project-card {
+      background: #251f13;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(30, 32, 31, 0.434);
+      width: 150px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        .nav-button {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 4px solid black;
-            border-radius: 10px;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: transparent;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    }
 
-        .nav-button:hover {
-            animation: glitch 0.4s linear;
-            background-color: white;
-            color: black;
-        }
+    .project-icon {
+      font-size: 80px;
+      color: #9f6f3f;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
 
-        @keyframes glitch {
-            0% { box-shadow: 2px 2px 0 red; transform: translate(0, 0); }
-            25% { box-shadow: -2px -2px 0 blue; transform: translate(2px, -2px); }
-            50% { box-shadow: 2px -2px 0 lime; transform: translate(-2px, 2px); }
-            75% { box-shadow: -2px 2px 0 yellow; transform: translate(1px, -1px); }
-            100% { box-shadow: 0 0 0 transparent; transform: translate(0, 0); }
-        }
+    .project-icon:hover {
+      color: #eacca6;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
 
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+    #contact {
+      text-align: center;
+      margin: 80px auto;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-top: 30px;
+    }
 
-        .project-icon {
-            font-size: 100px;
-            color: #9f6f3f;
-            display: inline-block;
-            margin: 40px auto;
-            text-align: center;
-            text-decoration: none;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+    .contact-item {
+      font-size: 20px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .project-icon:hover {
-            animation: tilt 0.4s infinite ease-in-out;
-            color: #eacca6;
-            transform: scale(1.1);
-            cursor: pointer;
-        }
+    .contact-item i {
+      font-size: 26px;
+      color: #15542b;
+    }
 
-        @keyframes tilt {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(3deg); }
-            50% { transform: rotate(-3deg); }
-            75% { transform: rotate(2deg); }
-            100% { transform: rotate(0deg); }
-        }
+    .contact-item a {
+      color: #15542b;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        #contact {
-            text-align: center;
-            margin: 80px;
-        }
+    .contact-item a:hover {
+      color: #000;
+    }
 
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            font-size: 20px;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-item i {
-            font-size: 26px;
-            color: #15542b;
-        }
-
-        .contact-item a {
-            color: #15542b;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: #000000;
-        }
-    </style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
+
 <body>
+  <nav>
+    <ul class="navbar">
+      <li><a class="nav-button" href="#intro">About</a></li>
+      <li><a class="nav-button" href="#work">How I Work</a></li>
+      <li><a class="nav-button" href="#project">Projects</a></li>
+      <li><a class="nav-button" href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
 
-    <nav>
-        <ul class="navbar">
-            <li><a class="nav-button" href="#intro">About</a></li>
-            <li><a class="nav-button" href="#work">How I Work</a></li>
-            <li><a class="nav-button" href="#project">Projects</a></li>
-            <li><a class="nav-button" href="#contact">Contact Me</a></li>
-        </ul>
-    </nav>
+  <header>
+    <div class="header-content">
+      <img src="assets/File_000__2_-removebg-preview.png" alt="Tosh Jamieson handwritten" style="height: 200px; margin-bottom: 10px;">
+      <p class="tagline">Student | Web Designer | Tinkerer</p>
+      <img src="assets/PortfolioJPEG.jpg" alt="Cartoon Portrait" style="width: 600px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 4px solid #000;">
+    </div>
+  </header>
 
-    <header>
-        <div class="header-content">
-            <img src="assets/File_000__2_-removebg-preview.png" alt="Tosh Jamieson handwritten" style="height: 200px; margin-bottom: 10px;">
-            <p class="tagline">Student | Web Designer | Tinkerer</p>
-            <img src="assets/PortfolioJPEG.jpg" alt="Cartoon Portrait" class="portrait" style="
-                width: 600px;
-                height: auto;
-                border-radius: 20px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-                border: 4px solid #000000;">
-        </div>
-    </header>
+  <hr>
 
-    <hr>
+  <section id="intro">
+    <h2>About me</h2>
+    <p>Hi! My name is <strong>Tosh Jamieson</strong>, I am a student at the <strong>University of Ottawa</strong> studying <strong>Computer Engineering</strong>. I enjoy several tech-related hobbies such as <strong>building computers</strong>, <strong>3D printing</strong>, testing <strong>electrical components</strong>, and learning new ways to incorporate them all together. Gaining new skills encourages me to push myself and become a <strong>more well-rounded engineer</strong>.</p>
+  </section>
 
-    <section id="intro">
-        <h2>About me</h2>
-        <p>
-            Hi! My name is <strong>Tosh Jamieson</strong>, I am a student at the <strong>University of Ottawa</strong> studying <strong>Computer Engineering</strong>.
-            I enjoy several tech-related hobbies such as <strong>building computers</strong>, <strong>3D printing</strong>, testing <strong>electrical components</strong>, 
-            and learning new ways to incorporate them all together. Gaining new skills encourages me to push myself and become a <strong>more well-rounded engineer</strong>.
-        </p>
-    </section>
+  <hr>
 
-    <hr>
+  <section id="work">
+    <h2>How I work</h2>
+    <p>I am currently participating in a <strong>User Interface Design course</strong> aimed at developing the skills required to design interfaces that are <strong>visually effective</strong> and <strong>intuitive</strong>. My design approach includes taking inspiration from <strong>well-designed UIs</strong>, seeking methods to make my own designs <strong>unique</strong>, and engaging with the learning modules provided by the <strong>SEG3125 course</strong>.</p>
+  </section>
 
-    <section id="work">
-        <h2>How I work</h2>
-        <p>
-            I am currently participating in a <strong>User Interface Design course</strong> aimed at developing the skills required to design interfaces
-            that are <strong>visually effective</strong> and <strong>intuitive</strong>. My design approach includes taking inspiration from <strong>well-designed UIs</strong>,
-            seeking methods to make my own designs <strong>unique</strong>, and engaging with the learning modules provided by the <strong>SEG3125 course</strong>.
-        </p>
-    </section>
+  <hr>
 
-    <hr>
+  <section id="project">
+    <h2>Projects</h2>
+    <h3>Coming Soon!</h3>
 
-    <section id="project">
-        <h2>Projects</h2>
-        <h3>Coming Soon!</h3>
-        <div class="project-container">
-            <div class="project-card">
-                <h3>Service</h3>
-                <a href="https://tjami062.github.io/SEG3125A2/" class="project-icon" target="_blank" rel="noopener noreferrer">
-                    <i class="uil uil-robot"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <h3>Game</h3>
-                <a href="https://tjami062.github.io/Portfolio/game" class="project-icon">
-                    <i class="bx bx-joystick"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <h3>Ecommerce</h3>
-                <a href="#commerce" class="project-icon">
-                    <i class="uil uil-shop"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <h3>Analytics</h3>
-                <a href="#analytics" class="project-icon">
-                    <i class="uil uil-chart-bar"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="project-container">
+      <div class="project-card">
+        <h3>Service</h3>
+        <a href="https://tjami062.github.io/SEG3125A2/" class="project-icon" target="_blank">
+          <i class="bx bx-bot"></i>
+        </a>
+      </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-            <div class="contact-item">
-                <i class="bx bx-envelope"></i>
-                <a href="mailto:toshja43@gmail.com">toshja43@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="bx bxl-linkedin-square"></i>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a>
-            </div>
-            <div class="contact-item">
-                <i class="bx bxl-github"></i>
-                <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
-            </div>
-        </div>
-    </section>
+      <div class="project-card">
+        <h3>Game</h3>
+        <a href="game" class="project-icon">
+          <i class="bx bx-joystick"></i>
+        </a>
+      </div>
 
+      <div class="project-card">
+        <h3>Ecommerce</h3>
+        <a href="#commerce" class="project-icon">
+          <i class="bx bx-store"></i>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>Analytics</h3>
+        <a href="#analytics" class="project-icon">
+          <i class="bx bx-bar-chart"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-item">
+        <i class="bx bx-envelope"></i>
+        <a href="mailto:toshja43@gmail.com">toshja43@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="bx bxl-linkedin-square"></i>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a>
+      </div>
+      <div class="contact-item">
+        <i class="bx bxl-github"></i>
+        <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
